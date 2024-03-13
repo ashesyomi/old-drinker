@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>옛주당</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gugi&family=IBM+Plex+Sans+KR:wght@500&display=swap');
+        div a h1{
+            font-family: 'Gugi', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
+        #menu li a{
+            font-family: 'Gowun Batang', serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
+        *{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+        #menu a{
+            text-decoration : none;
+            color : white;
+            -webkit-transition: all .25s ease;
+			-moz-transition: all .3s ease;
+			-ms-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+        }
+        #menu a:hover{
+            color: rgb(131, 131, 131);
+        }
+        #menu1{
+            position:absolute;
+            left:30%;
+            margin-bottom:20px;
+            display: inline-block;
+            top:5%;
+
+        }
+        #menu {
+			list-style: none;
+			float: center;
+		}
+        #menu li{
+            display:inline-block;
+            font-size:120%;
+            font-weight: bold;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        h1{
+            font-size: 350%;
+            top:-10px;
+            margin-left:3%;
+            position:absolute;
+            color:white;
+        }
+        hr{
+            top:16%;
+            position: absolute;
+            margin:0 3.5% 0 2.5%;
+        }
+        body{
+            margin:0;
+        }
+        #page{ 
+            position: absolute;
+            top:6%;
+            right:5%;
+            text-align: center;
+        }
+        #drop{
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        #hid{
+            visibility: hidden;
+            z-index: 1;
+            opacity: 0;
+			position: absolute;
+            padding-left:0px;
+        }
+        .drop:hover #hid{
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            float:left;
+            padding-left:0px;
+        
+        }
+        #hid li{
+            list-style: none;
+            width: 100px;
+            position: relative;
+            padding:2px;
+            left:-35px;
+        }
+        #hid li a{
+            text-decoration: none;
+            color:rgb(107, 107, 107);
+            background-color: white;
+            border-radius: 9px;
+            font-family: 'Gowun Batang', serif;
+        }
+        #grey a{
+            color:rgb(131, 131, 131);
+        }
+        /**/
+        .prod{
+            text-align: center;
+            margin:auto;
+            
+        }
+        .prod img{
+            width: 300px;
+            height: 440px;
+        }
+        .prod div{
+            display: inline-block;
+            position:absolute;
+            top:100px;
+            
+        }
+        #cart {
+            margin: 0 150px;
+            padding:20px 50px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        /**/
+        #cart-items {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        #cart-items th, #cart-items td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        #cart-items th {
+            background-color: #f5f5f5;
+        }
+        #cart-items th input[type="checkbox"] {
+            display: none;
+        }
+        #cart-items td input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        #cart-items td label {
+            position: relative;
+        }
+        #cart-items td label::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px; /* 조절 가능한 너비 */
+            height: 20px; /* 조절 가능한 높이 */
+            border: 1px solid #ddd;
+            background-color: #fff;
+            display: inline-block;
+        }
+        #cart-total {
+            text-align: right;
+            margin-top: 20px;
+        }
+        #cart-total p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #buy{
+            padding: 10px 23px;
+            background-color: rgb(244, 206, 91);
+            color:white;
+            border:none;
+            font-size: 15px;
+            text-align: right;
+            /* float: right; */
+            margin:20px 0px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            margin-left: 91%;
+        }
+        #delete{
+            padding: 10px 23px;
+            background-color: #97c5ed;
+            color:white;
+            border:none;
+            font-size: 15px;
+            text-align: right;
+            margin:20px;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            top:-130px;
+        }
+
+
+   
+    </style>
+    
+</head>
+<body>
+    <div class="bg">
+        <img src="https://ifh.cc/g/CHJvz5.jpg" width="100%" height="200px">  
+        <header>
+        <div id="headerName">
+            <a href="https://rage0501.cafe24.com/YJD/home.html">
+                <h1>
+                    옛주당
+                </h1>
+            </a>
+        </div>
+        <nav id="menu1">
+            <ul id="menu">
+                <li><a href="https://rage0501.cafe24.com/YJD/sub1.html">전통주 이야기</a></li>
+                <li><a href="https://rage0501.cafe24.com/YJD/sub2.html">전통주 스토어</a></li>
+                <li><a href="https://rage0501.cafe24.com/YJD/myPage1.html">마이페이지</a></li>
+            </ul>
+        </nav>
+        <nav id="page">
+            <ul>
+                <li id="drop"><a href="https://rage0501.cafe24.com/YJD/basket.html"><img src="https://ifh.cc/g/cT6afx.png" width="30px" height="30px"></a></li>
+                <li class="drop" id="drop"><a href="https://rage0501.cafe24.com/YJD/login.html"><img src="https://ifh.cc/g/TfCT7t.png" width="30px" height="30px"></a>
+                    <ul id="hid">
+                        <li><a href="https://rage0501.cafe24.com/YJD/login.html">&nbsp;로그인&nbsp;</a></li>
+                        <li><a href="https://rage0501.cafe24.com/YJD/sign.html">&nbsp;회원가입&nbsp;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <hr style="border: solid 1px white; width: 94%; opacity: 0.5;">
+        </header>
+    </div>
+    <div id="cart">
+        <h2>장바구니</h2>
+        <table id="cart-items">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>이미지</th>
+                    <th>상품명</th>
+                    <th>판매금액</th>
+                    <th>수량</th>
+                    <th>주문금액</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 장바구니 아이템이 여기에 표시될 것입니다. -->
+            </tbody>
+        </table>
+        <div id="cart-total"></div>
+        <input type="submit" id="buy" value="주문하기" onclick="checkout()"/>
+        <input type="submit" id="delete" value="삭제하기" onclick="deleteItems()"/>
+    </div>
+    <script>
+        function displayCart() 
+        {
+        fetch('getcart.php')
+            .then(response => response.json())
+            .then(cartItems => 
+            {
+                console.log(cartItems);
+                const cartTableBody = document.querySelector('#cart-items tbody');
+                const cartTotal = document.getElementById('cart-total');
+
+                // 기존 테이블 내용 삭제
+                cartTableBody.innerHTML = '';
+
+                let totalAmount = 0;
+
+                // 장바구니 아이템을 HTML로 표시
+                cartItems.forEach(item => {
+                    const row = cartTableBody.insertRow();
+                    row.innerHTML = `
+                        <td><input type="checkbox" class="item-checkbox" onchange="updateTotalAmount()"></td>
+                        <td><img src="${item.image}" alt="${item.name}" width="90px" height="130px"></td>
+                        <td>${item.name}</td>
+                        <td>${item.price.toLocaleString()}원</td>
+                        <td>${item.quantity}</td>
+                        <td>${(item.price * item.quantity).toLocaleString()}원</td>
+                    `;
+
+                    totalAmount += item.price * item.quantity;
+                });
+
+                // 총 주문금액 갱신
+                cartTotal.innerHTML = `<p id="total-amount">총 주문금액: ${totalAmount.toLocaleString()}원</p>`;
+            })
+            .catch(error => console.error('Error fetching cart data:', error));
+        }
+
+     
+ 
+     function updateTotalAmount() {
+        const checkboxes = document.querySelectorAll('.item-checkbox');
+        let totalAmount = 0;
+ 
+        checkboxes.forEach((checkbox, index) => {
+             if (checkbox.checked) {
+                const itemRow = checkbox.parentElement.parentElement;
+                const price = parseFloat(itemRow.cells[3].innerText.replace('원', '').replace(',', ''));
+                const quantity = parseInt(itemRow.cells[4].innerText);
+                totalAmount += price * quantity;
+            }
+        });
+ 
+        const cartTotal = document.getElementById('cart-total');
+        cartTotal.innerHTML = `<p id="total-amount">총 주문금액: ${totalAmount.toLocaleString()}원</p>`;
+     }
+ 
+     function checkout() {
+         const checkboxes = document.querySelectorAll('.item-checkbox');
+ 
+         checkboxes.forEach(checkbox => {
+             if (checkbox.checked) {
+                 const itemRow = checkbox.parentElement.parentElement;
+                 itemRow.remove();
+             }
+         });
+ 
+         updateTotalAmount();
+ 
+         alert('주문이 완료되었습니다. 감사합니다!');
+     }
+ 
+     function deleteItems() {
+         const checkboxes = document.querySelectorAll('.item-checkbox');
+ 
+         checkboxes.forEach(checkbox => {
+             if (checkbox.checked) {
+                 const itemRow = checkbox.parentElement.parentElement;
+                 itemRow.remove();
+             }
+         });
+ 
+         updateTotalAmount();
+     }
+ 
+     // 페이지 로드 시 장바구니 표시
+     window.onload = displayCart;
+     </script>
+</body>
+</html>

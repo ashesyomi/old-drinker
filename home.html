@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옛주당</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gugi&family=IBM+Plex+Sans+KR:wght@500&display=swap');
+        div a h1{
+            font-family: 'Gugi', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
+        *{
+            font-family: 'Gowun Batang', serif;
+        }
+        /*@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+        p{
+            font-family: 'Gowun Batang', serif;
+            font-size:150px;
+        }*/
+        #menu a{
+            text-decoration : none;
+            color : white;
+            -webkit-transition: all .25s ease;
+			-moz-transition: all .3s ease;
+			-ms-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+        }
+        #menu a:hover{
+            color: rgb(131, 131, 131);
+        }
+        #menu1{
+            position:absolute;
+            left:30%;
+            margin-bottom:20px;
+            display: inline-block;
+            top:5%;
+
+        }
+        #menu {
+			list-style: none;
+			float: center;
+		}
+        #menu li{
+            display:inline-block;
+            font-size:120%;
+            font-weight: bold;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        h1{
+            font-size: 350%;
+            top:-10px;
+            margin-left:3%;
+            position:absolute;
+            color:white;
+        }
+        #bg {
+            position: fixed; 
+            min-width: 100%;
+            min-height: 100%;
+        }
+        hr{
+            top:16%;
+            position: absolute;
+            margin:0 3.5% 0 2.5%;
+        }
+        body{
+            margin:0;
+        }
+        #page{ 
+            position: absolute;
+            top:6%;
+            right:5%;
+            text-align: center;
+        }
+        #drop{
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        #hid{
+            visibility: hidden;
+            z-index: 1;
+            opacity: 0;
+			position: absolute;
+            padding-left:0px;
+        }
+        .drop:hover #hid{
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            float:left;
+            padding-left:0px;
+        
+        }
+        #hid li{
+            list-style: none;
+            width: 100px;
+            position: relative;
+            padding:2px;
+            left:-35px;
+        }
+        #hid li a{
+            text-decoration: none;
+            color:rgb(107, 107, 107);
+            background-color: white;
+            border-radius: 9px;
+        }
+        /**/
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <img src="https://ifh.cc/g/nmBQhX.jpg" width="100%">
+        
+        <header>
+        <div id="headerName">
+            <a href="https://rage0501.cafe24.com/YJD/home.html">
+                <h1>
+                    옛주당
+                </h1>
+            </a>
+        </div>
+        <nav id="menu1">
+            <ul id="menu">
+                <li><a href="https://rage0501.cafe24.com/YJD/sub1.html">전통주 이야기</a></li>
+                <li><a href="https://rage0501.cafe24.com/YJD/sub2.html">전통주 스토어</a></li>
+                <li><a href="https://rage0501.cafe24.com/YJD/myPage1.html">마이페이지</a></li>
+            </ul>
+        </nav>
+        <nav id="page">
+            <ul>
+                <li id="drop"><a href="https://rage0501.cafe24.com/YJD/basket.html"><img src="https://ifh.cc/g/cT6afx.png" width="30px" height="30px"></a></li>
+                <li class="drop" id="drop"><a href="https://rage0501.cafe24.com/YJD/login.html"><img src="https://ifh.cc/g/TfCT7t.png" width="30px" height="30px"></a>
+                    <ul id="hid">
+                        <li><a href="https://rage0501.cafe24.com/YJD/login.html">&nbsp;로그인&nbsp;</a></li>
+                        <li><a href="https://rage0501.cafe24.com/YJD/sign.html">&nbsp;회원가입&nbsp;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <hr style="border: solid 1px white; width: 94%; opacity: 0.5;">
+        </header>
+        <div>
+            <p>
+                
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옛주당</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gugi&family=IBM+Plex+Sans+KR:wght@500&display=swap');
+        div a h1{
+            font-family: 'Gugi', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
+        #menu li a{
+            font-family: 'Gowun Batang', serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
+        *{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+        #menu a{
+            text-decoration : none;
+            color : white;
+            -webkit-transition: all .25s ease;
+			-moz-transition: all .3s ease;
+			-ms-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+        }
+        #menu a:hover{
+            color: rgb(131, 131, 131);
+        }
+        #menu1{
+            position:absolute;
+            left:30%;
+            margin-bottom:20px;
+            display: inline-block;
+            top:5%;
+
+        }
+        #menu {
+			list-style: none;
+			float: center;
+		}
+        #menu li{
+            display:inline-block;
+            font-size:120%;
+            font-weight: bold;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        h1{
+            font-size: 350%;
+            top:-10px;
+            margin-left:3%;
+            position:absolute;
+            color:white;
+        }
+        hr{
+            top:16%;
+            position: absolute;
+            margin:0 3.5% 0 2.5%;
+        }
+        body{
+            margin:0;
+        }
+        #page{ 
+            position: absolute;
+            top:6%;
+            right:5%;
+            text-align: center;
+        }
+        #drop{
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        #hid{
+            visibility: hidden;
+            z-index: 1;
+            opacity: 0;
+			position: absolute;
+            padding-left:0px;
+        }
+        .drop:hover #hid{
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            float:left;
+            padding-left:0px;
+        
+        }
+        #hid li{
+            list-style: none;
+            width: 100px;
+            position: relative;
+            padding:2px;
+            left:-35px;
+        }
+        #hid li a{
+            text-decoration: none;
+            color:rgb(107, 107, 107);
+            background-color: white;
+            border-radius: 9px;
+            font-family: 'Gowun Batang', serif;
+        }
+        #grey a{
+            color:rgb(131, 131, 131);
+        }
+        /**/
+        #prod img{
+            width: 220px;
+            height: 290px;
+            border-radius: 12px;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+        }
+        #prod img:hover{
+            opacity: 0.6;
+        }
+        #prod li{
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+        }
+        #prod{
+            padding-left: 120px;
+            margin: auto;
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            margin-bottom: 150px;
+        }
+        #prod p{
+            text-align:left;
+            margin-left: 8px;
+            font-size:15px;
+        }
+        .prod-list1{
+            margin-top: 60px;
+            margin:0px 110px;
+        }
+        .prod-list1 h3{
+            margin-left:150px;
+            margin-top: 40px;
+        }
+        #alcohol{
+           margin-left: 13%;
+        }
+        #alcohol li{
+            text-decoration: none;
+            list-style: none;
+            display:inline-block;
+            padding:20px;
+            color:black;
+        }
+        #alcohol li:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            color: rgb(236, 196, 77);
+        }
+        .prod-list2{
+            margin-top: 60px;
+            margin:0px 110px;
+        }
+        .prod-list2 h3{
+            margin-left:150px;
+            margin-top: 40px;
+        }
+        .prod-list3{
+            margin-top: 60px;
+            margin:0px 110px;
+        }
+        .prod-list3 h3{
+            margin-left:150px;
+            margin-top: 40px;
+        }
+        .prod-list4{
+            margin-top: 60px;
+            margin:0px 110px;
+            margin-bottom: 150px;
+        }
+        .prod-list4 h3{
+            margin-left:150px;
+            margin-top: 40px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="bg">
+        <img src="https://ifh.cc/g/CHJvz5.jpg" width="100%" height="200px">
+        
+        <header>
+        <div id="headerName">
+            <a href="https://rage0501.cafe24.com/YJD/home.html">
+                <h1>
+                    옛주당
+                </h1>
+            </a>
+        </div>
+        <nav id="menu1">
+            <ul id="menu">
+                <li><a href="https://rage0501.cafe24.com/YJD/sub1.html">전통주 이야기</a></li>
+                <li id="grey"><a href="https://rage0501.cafe24.com/YJD/sub2.html">전통주 스토어</a></li>
+                <li><a href="https://rage0501.cafe24.com/YJD/myPage1.html">마이페이지</a></li>
+            </ul>
+        </nav>
+        <nav id="page">
+            <ul>
+                <li id="drop"><a href="https://rage0501.cafe24.com/YJD/basket.html"><img src="https://ifh.cc/g/cT6afx.png" width="30px" height="30px"></a></li>
+                <li class="drop" id="drop"><a href="https://rage0501.cafe24.com/YJD/login.html"><img src="https://ifh.cc/g/TfCT7t.png" width="30px" height="30px"></a>
+                    <ul id="hid">
+                        <li><a href="https://rage0501.cafe24.com/YJD/login.html">&nbsp;로그인&nbsp;</a></li>
+                        <li><a href="https://rage0501.cafe24.com/YJD/sign.html">&nbsp;회원가입&nbsp;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <hr style="border: solid 1px white; width: 94%; opacity: 0.5;">
+        </header>
+        <div>
+            <ul id="alcohol">
+                <a href="#prod1"><li>약주/청주</li></a>
+                <a href="#prod2"><li>증류주</li></a>
+                <a href="#prod3"><li>과실주</li></a>
+                <a href="#prod4"><li>막걸리</li></a>
+            </ul>
+        </div>
+        <div class="prod-list1" id="prod1">
+            <h3>약주/청주</h3>
+            <ul id="prod">
+                <li>
+                    <a href="https://rage0501.cafe24.com/YJD/sub2_1.html"><img src="https://ifh.cc/g/Y0W5r5.jpg"></a>
+                    <p style="font-size: 17px;">면천두견주</p>
+                    <p><b>45,000</b>원</p>
+                </li>
+                <li>
+                    <a href="https://rage0501.cafe24.com/YJD/sub2_2.html"><img src="https://ifh.cc/g/ZYNSNK.jpg"></a>
+                    <p style="font-size: 17px;">능이주</p>
+                    <p><b>12,000</b>원</p>
+                </li>
+                <li>
+                    <a href="https://rage0501.cafe24.com/YJD/sub2_3.html"><img src="https://ifh.cc/g/Wcpdqv.jpg"></a>
+                    <p style="font-size: 17px;">술아 국화주</p>
+                    <p><b>20,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/qKpAsQ.jpg"></a>
+                    <p style="font-size: 17px;">우포</p>
+                    <p><b>9,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/f4gx2N.jpg"></a>
+                    <p style="font-size: 17px;">솔송주</p>
+                    <p><b>7,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/W3CKHW.jpg"></a>
+                    <p style="font-size: 17px;">오메기술 13%</p>
+                    <p><b>12,000</b>원</p>
+                </li>
+            </ul>
+        </div>
+        <div class="prod-list2" id="prod2">
+            <h3>증류주</h3>
+            <ul id="prod">
+                <li>
+                    <a href="https://rage0501.cafe24.com/YJD/sub2_4.html"><img src="https://ifh.cc/g/8DJn81.jpg"></a>
+                    <p style="font-size: 17px;">문배술</p>
+                    <p><b>11,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/0knsLM.jpg"></a>
+                    <p style="font-size: 17px;">한주 35%</p>
+                    <p><b>12,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/BMA18l.jpg"></a>
+                    <p style="font-size: 17px;">고소리술 40%</p>
+                    <p><b>32,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/ATHkhQ.jpg"></a>
+                    <p style="font-size: 17px;">두레앙 35%</p>
+                    <p><b>40,500</b>원</p>
+                </li>
+            </ul>
+        </div>
+        <div class="prod-list3" id="prod3">
+            <h3>과실주</h3>
+            <ul id="prod">
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/zfKbaz.jpg"></a>
+                    <p style="font-size: 17px;">혼디주</p>
+                    <p><b>7,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/y0KmcN.jpg"></a>
+                    <p style="font-size: 17px;">자두와인</p>
+                    <p><b>22,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/OzGtjz.jpg"></a>
+                    <p style="font-size: 17px;">그랑꼬또 청수</p>
+                    <p><b>73,500</b>원</p>
+                </li>
+            </ul>
+        </div>
+        <div class="prod-list4" id="prod4">
+            <h3>막걸리</h3>
+            <ul id="prod">
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/C3qjd0.jpg"></a>
+                    <p style="font-size: 17px;">자연담은 복분자 막걸리</p>
+                    <p><b>56,000</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/B5YSqD.jpg"></a>
+                    <p style="font-size: 17px;">해창 9%</p>
+                    <p><b>10,800</b>원</p>
+                </li>
+                <li>
+                    <a href="#"><img src="https://ifh.cc/g/Qfr26t.jpg"></a>
+                    <p style="font-size: 17px;">나루 생 막걸리 6%</p>
+                    <p><b>19,000</b>원</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옛주당</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gugi&family=IBM+Plex+Sans+KR:wght@500&display=swap');
+        div a h1{
+            font-family: 'Gugi', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
+        .menuText li a{
+            font-family: 'Gowun Batang', serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
+        *{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+        #menu a{
+            text-decoration : none;
+            color : white;
+            -webkit-transition: all .25s ease;
+			-moz-transition: all .3s ease;
+			-ms-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+        }
+        #menu a:hover{
+            color: rgb(131, 131, 131);
+        }
+        #menu1{
+            position:absolute;
+            left:30%;
+            margin-bottom:20px;
+            display: inline-block;
+            top:5%;
+
+        }
+        #menu {
+			list-style: none;
+			float: center;
+		}
+        #menu li{
+            display:inline-block;
+            font-size:120%;
+            font-weight: bold;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        h1{
+            font-size: 350%;
+            top:-10px;
+            margin-left:3%;
+            position:absolute;
+            color:white;
+        }
+        #bg {
+            position: fixed; 
+            /*top: 0; 
+            left: 0; 
+        
+            /* Preserve aspet ratio */
+            min-width: 100%;
+            min-height: 100%;
+        }
+        hr{
+            top:16%;
+            position: absolute;
+            margin:0 3.5% 0 2.5%;
+        }
+        body{
+            margin:0;
+        }
+        #page{ 
+            position: absolute;
+            top:6%;
+            right:5%;
+            text-align: center;
+        }
+        #drop{
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        #hid{
+            visibility: hidden;
+            z-index: 1;
+            opacity: 0;
+			position: absolute;
+            padding-left:0px;
+        }
+        .drop:hover #hid{
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            float:left;
+            padding-left:0px;
+        
+        }
+        #hid li{
+            list-style: none;
+            width: 100px;
+            position: relative;
+            padding:2px;
+            left:-35px;
+        }
+        #hid li a{
+            text-decoration: none;
+            color:rgb(107, 107, 107);
+            background-color: white;
+            border-radius: 9px;
+        }
+        /**/
+        .login-page {
+            width: 360px;
+            margin: auto;
+        }
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            top:-30px;
+            margin: 0 auto 100px;
+            /* text-align: center; */
+           
+        }
+        .form input {
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 20px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .form button{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #979797;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+        }
+        .form button:hover,.form button:active,.form button:focus {
+            background: #828282;
+        }
+        .form .message {
+            /* margin: 20px 0 0; */
+            color: #b3b3b3;
+            font-size: 12px;
+            text-align: center;
+        }
+        .form .message a {
+            color: #2c2c2c;
+            text-decoration-line: underline;
+        }
+        .form .login-form {
+            display: none;
+        }
+        #adult{
+            margin:0 0 20px;
+            background-color:#ffa1a1;
+        }
+        #adult:hover{
+            background-color: #ff7a7a;
+        }
+        body {
+            font-family:'IBM Plex Sans KR', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;      
+        }
+        #modal-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        #modal {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #btn {
+            margin-bottom: 13px;
+            color: #fff;
+         
+            border: none;
+            padding: 13px;
+            cursor: pointer;
+        }
+        .form .idcheck{
+            width: 75px;
+            font-size: 14px;
+            padding: 12px;
+            position: relative;
+            left:282px;
+            top:70px;
+            display: block;
+            border:2px solid #a3a3a3;
+            color:#828282;
+            border-radius: 8%;
+            cursor: pointer;
+        }
+        #username{
+            width: 75%;
+            text-align: left;
+        }
+        .register-form .but:hover{
+            background: #828282;
+        }
+        .register-form .but{
+            outline: 0;
+            background: #979797;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+            margin-bottom:0px;
+        }
+    </style>
+    
+</head>
+<body><div class="bg">
+    <img src="https://ifh.cc/g/CHJvz5.jpg" width="100%" height="200px">
+    
+    <header>
+    <div id="headerName">
+        <a href="https://rage0501.cafe24.com/YJD/home.html">
+            <h1>
+                옛주당
+            </h1>
+        </a>
+    </div>
+    <nav id="menu1">
+        <ul class="menuText" id="menu">
+            <li><a href="https://rage0501.cafe24.com/YJD/sub1.html">전통주 이야기</a></li>
+            <li><a href="https://rage0501.cafe24.com/YJD/sub2.html">전통주 스토어</a></li>
+            <li><a href="https://rage0501.cafe24.com/YJD/myPage1.html">마이페이지</a></li>
+        </ul>
+    </nav>
+    <nav class="menuText" id="page">
+        <ul>
+            <li id="drop"><a href="https://rage0501.cafe24.com/YJD/basket.html"><img src="https://ifh.cc/g/cT6afx.png" width="30px" height="30px"></a></li>
+            <li class="drop" id="drop"><a href="https://rage0501.cafe24.com/YJD/login.html"><img src="https://ifh.cc/g/TfCT7t.png" width="30px" height="30px"></a>
+                <ul class="menuText" id="hid">
+                    <li><a href="https://rage0501.cafe24.com/YJD/login.html">&nbsp;로그인&nbsp;</a></li>
+                    <li><a href="https://rage0501.cafe24.com/YJD/sign.html">&nbsp;회원가입&nbsp;</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <hr style="border: solid 1px white; width: 94%; opacity: 0.5;">
+    </header>
+        <div class="login-page">
+            <div class="form">
+              <form class="register-form" action="signup.php" method = "POST">
+                <input type="button" class="idcheck" onclick = "doubleCheck()" value="중복확인"/>
+                <input type="text" id="username" name="id" placeholder="아이디" required>
+                <input type="password" id="password" name="password" placeholder="비밀번호" required>
+                <input type="text" id="name" name="name" placeholder="이름" required>
+                <input type="email" id="email" name="email" placeholder="이메일" required>
+                <input type="tel" id="phone" name="p_num" placeholder="휴대전화 (숫자만 입력)" required>
+                <a href="#"><button type="button" onclick="openModal()" id="adult">성인인증 하기</button></a>
+                <input type="submit" class="but" id="signupButton" value="회원가입"/>
+                <p class="message">이미 회원이신가요?&nbsp;<a href="https://rage0501.cafe24.com/YJD/login.html">로그인</a></p>
+              </form>
+              <div id="modal-container">
+                <div id="modal">
+                  <p>나이를 입력하세요</p>
+                  <input type="number" id="ageInput" placeholder="나이">
+                  <br><br>
+                  <button onclick="verifyAge()" id="btn">인증 완료</button>
+                  <button onclick="closeModal()" id="c">닫기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+                var isAdultVerified = false;
+                var cflag = false;
+
+                function openModal() {
+                    document.getElementById('modal-container').style.display = 'flex';
+                }
+
+                function closeModal() {
+                    document.getElementById('modal-container').style.display = 'none';
+                }
+
+                function verifyAge() {
+                    var age = document.getElementById('ageInput').value;
+                                
+                    if (age >= 18) {
+                        alert('성인 인증이 완료되었습니다!');
+                        verifyAdult();
+                        closeModal();
+                    } 
+                    else {
+                        alert('미성년자는 접근이 제한됩니다.');
+                    }
+                }
+
+                function verifyAdult() {
+                    // 성인인증이 완료되면 isAdultVerified를 true로 설정
+                    isAdultVerified = true;
+                    enableSignUpButton();
+                    changeAdultButton();
+                }
+                
+                function enableSignUpButton() {
+                    // 아이디, 비밀번호, 이름, 휴대전화가 모두 입력되고 성인인증이 완료되었을 때 버튼 활성화, 추가로 아이디 중복확인까지 완료되야 활성화
+                    var username = document.getElementById('username').value;
+                    var password = document.getElementById('password').value;
+                    var name = document.getElementById('name').value;
+                    var phone = document.getElementById('phone').value;
+                    var signupButton = document.getElementById('signupButton');
+
+                    signupButton.disabled = !(username && password && name && phone && isAdultVerified /*&& cflag*/);
+                    signupButton.style.opacity = signupButton.disabled ? 0.5 : 1;
+                }
+                function changeAdultButton() {
+                    // 성인인증이 완료되면 성인인증 하기 버튼의 색상 변경
+                    var adultButton = document.getElementById('adult');
+                    adultButton.style.backgroundColor = '#5DB9F6';
+                    adultButton.innerHTML = '성인인증 완료 ✔';
+                }
+
+                function doubleCheck() {
+                    var username = document.getElementById('username').value;
+                    
+                    if(username)
+                    {
+                        url = "check.php?username="+username;
+                        window.open(url,"chkid","width=400,height=200");
+                    } 
+
+                    else 
+                    {
+                        alert("아이디를 입력하세요.");
+                    }
+                    
+                }
+            /*
+                function signup() {
+                    // 입력된 값 출력
+                    console.log('아이디:', document.getElementById('username').value);
+                    console.log('비밀번호:', document.getElementById('password').value);
+                    console.log('이름:', document.getElementById('name').value);
+                    console.log('휴대전화:', document.getElementById('phone').value);
+                    // 회원가입 로직 추가
+                    alert('회원가입이 완료되었습니다!');
+                    window.location.href='https://rage0501.cafe24.com/YJDhome.html'
+                    // 실제로는 이 정보를 서버로 전송하여 회원가입 로직을 처리해야 합니다.
+                }
+            */
+                // 입력값이 변경될 때마다 확인하여 버튼 활성/비활성화
+                document.getElementById('username').addEventListener('input', enableSignUpButton);
+                document.getElementById('password').addEventListener('input', enableSignUpButton);
+                document.getElementById('name').addEventListener('input', enableSignUpButton);
+                document.getElementById('phone').addEventListener('input', enableSignUpButton);
+          </script>
+    </body>
+</html>

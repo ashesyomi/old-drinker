@@ -1,0 +1,337 @@
+<?php include "s_start.php";?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옛주당</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gugi&family=IBM+Plex+Sans+KR:wght@500&display=swap');
+        div a h1{
+            font-family: 'Gugi', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
+        #menu li a{
+            font-family: 'Gowun Batang', serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
+        *{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+        #menu a{
+            text-decoration : none;
+            color : white;
+            -webkit-transition: all .25s ease;
+			-moz-transition: all .3s ease;
+			-ms-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+        }
+        #menu a:hover{
+            color: rgb(131, 131, 131);
+        }
+        #menu1{
+            position:absolute;
+            left:30%;
+            margin-bottom:20px;
+            display: inline-block;
+            top:5%;
+
+        }
+        #menu {
+			list-style: none;
+			float: center;
+		}
+        #menu li{
+            display:inline-block;
+            font-size:120%;
+            font-weight: bold;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        h1{
+            font-size: 350%;
+            top:-10px;
+            margin-left:3%;
+            position:absolute;
+            color:white;
+        }
+        hr{
+            top:16%;
+            position: absolute;
+            margin:0 3.5% 0 2.5%;
+        }
+        body{
+            margin:0;
+        }
+        #page{ 
+            position: absolute;
+            top:6%;
+            right:5%;
+            text-align: center;
+        }
+        #drop{
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        #hid{
+            visibility: hidden;
+            z-index: 1;
+            opacity: 0;
+			position: absolute;
+            padding-left:0px;
+        }
+        .drop:hover #hid{
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            float:left;
+            padding-left:0px;
+        
+        }
+        #hid li{
+            list-style: none;
+            width: 100px;
+            position: relative;
+            padding:2px;
+            left:-35px;
+        }
+        #hid li a{
+            text-decoration: none;
+            color:rgb(107, 107, 107);
+            background-color: white;
+            border-radius: 9px;
+            font-family: 'Gowun Batang', serif;
+        }
+        #grey a{
+            color:rgb(131, 131, 131);
+        }
+        /**/
+        .prod{
+            text-align: center;
+            margin:auto;
+            
+        }
+        .prod img{
+            width: 300px;
+            height: 440px;
+        }
+        .prod div{
+            display: inline-block;
+            position:absolute;
+            top:100px;
+            
+        }
+        button{
+            border:white;
+            background-color: white;
+            font-size: 15px;
+            margin:0 20px;
+        }
+        .page{
+            margin-left: 30px;
+        }
+        .page p{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            display: inline-block; 
+           font-size:18px;
+        }
+        .page #name{
+            color:gray;
+        }
+        .pageBox{
+            border:1px solid rgb(204, 204, 204);
+            border-radius: 10px;
+            margin:30px 20%;
+            
+        }
+        .pageBox ul li a{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            text-decoration: none;
+            list-style: none;
+            display:inline-block;
+            margin:0 20px;
+            color:grey;
+        }
+        .pageBox ul li{
+            display: inline-block;
+        }
+        .pageBox ul{
+            display:inline-block;
+        }
+        .pageBox h4{
+            margin-left: 30px;
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            font-size: 18px;
+            color:rgb(244, 206, 91);
+        }
+        #editForm {
+            margin: 20px;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        #editForm label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #editForm input {
+            padding: 8px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        #editForm input[type="submit"] {
+            background-color: rgb(244, 206, 91);
+            color: white;
+            cursor: pointer;
+            border:none;
+            margin-top:15px;
+            width: 50px;
+            border-radius: 7%;
+        }
+        #memberInfo{
+            margin:20px 50px;
+        }
+        .pageBox button{
+            margin:10px 0px 20px 45px;
+            font-size: 15px;
+            text-decoration: underline;
+            color:rgba(83, 83, 255, 0.884);
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="bg">
+        <img src="https://ifh.cc/g/CHJvz5.jpg" width="100%" height="200px">  
+        <header>
+        <div id="headerName">
+            <a href="https://rage0501.cafe24.com/YJD/home.html">
+                <h1>
+                    옛주당
+                </h1>
+            </a>
+        </div>
+        <nav id="menu1">
+            <ul id="menu">
+                <li><a href="https://rage0501.cafe24.com/YJD/sub1.html">전통주 이야기</a></li>
+                <li><a href="https://rage0501.cafe24.com/YJD/sub2.html">전통주 스토어</a></li>
+                <li id="grey"><a href="https://rage0501.cafe24.com/YJD/myPage1.html">마이페이지</a></li>
+            </ul>
+        </nav>
+        <nav id="page">
+            <ul>
+                <li id="drop"><a href="https://rage0501.cafe24.com/YJD/basket.html"><img src="https://ifh.cc/g/cT6afx.png" width="30px" height="30px"></a></li>
+                <li class="drop" id="drop"><a href="https://rage0501.cafe24.com/YJD/login.html"><img src="https://ifh.cc/g/TfCT7t.png" width="30px" height="30px"></a>
+                    <ul id="hid">
+                        <li><a href="https://rage0501.cafe24.com/YJD/login.html">&nbsp;로그인&nbsp;</a></li>
+                        <li><a href="https://rage0501.cafe24.com/YJD/sign.html">&nbsp;회원가입&nbsp;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <hr style="border: solid 1px white; width: 94%; opacity: 0.5;">
+        </header>
+        <div class="pageBox">
+            <div class="page">
+                <p><?php echo $s_name;?></p><p id="name">&nbsp;님</p>
+                <p style="margin-left:20px;">│</p>
+                <ul>
+                    <li>
+                        <a href="https://rage0501.cafe24.com/YJD/myPage1.html">주문 내역</a>
+                    </li>
+                    <li>
+                        <a href="https://rage0501.cafe24.com/YJD/myPage3.html">회원 정보</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pageBox">     
+            <h4>회원 정보</h4>   
+            <div id="memberInfo">
+                <!-- 기존 회원 정보 표시 -->
+                <p>이름: <?php echo $s_name;?></p>
+                <p>아이디: <?php echo $s_id;?></p>
+                <p>전화번호: <?php echo $s_phone_num;?></p>
+            </div>
+
+            <!-- 회원 정보 수정 폼 -->
+            <button onclick="showEditForm()">회원 수정</button>
+            <button onclick="showWithdrawalPopup()">회원 탈퇴</button>
+            <form id="editForm" onsubmit="submitForm()">
+                <label for="newName">새 이름:</label>
+                <input type="text" id="newName" name="newName" required>
+
+                <label for="newId">새 아이디:</label>
+                <input type="text" id="newId" name="newId" required>
+
+                <label for="newPhoneNumber">새 전화번호:</label>
+                <input type="tel" id="newPhoneNumber" name="newPhoneNumber" required>
+
+                <input type="submit" value="수정">
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       // 가상의 기존 회원 정보
+       var memberInfo = {
+            name: "황재윤",
+            id: "example_id",
+            phoneNumber: "010-1234-5678"
+        };
+        
+        
+        // 페이지 로딩 시 초기 값 설정
+        document.getElementById("newName").value = memberInfo.name;
+        document.getElementById("newId").value = memberInfo.id;
+        document.getElementById("newPhoneNumber").value = memberInfo.phoneNumber;
+        
+
+        // 수정 폼 보이기
+        function showEditForm() {
+            document.getElementById("editForm").style.display = "block";
+        }
+
+        function submitForm() {
+            event.preventDefault();
+
+            // 수정된 정보 가져오기
+            var newName = document.getElementById("newName").value;
+            var newId = document.getElementById("newId").value;
+            var newPhoneNumber = document.getElementById("newPhoneNumber").value;
+
+            // 화면에 수정된 정보 반영
+            memberInfo.name = newName;
+            memberInfo.id = newId;
+            memberInfo.phoneNumber = newPhoneNumber;
+
+            // 페이지 상의 회원 정보 업데이트
+            document.getElementById("memberInfo").innerHTML = `
+                <p>이름: ${memberInfo.name}</p>
+                <p>아이디: ${memberInfo.id}</p>
+                <p>전화번호: ${memberInfo.phoneNumber}</p>
+            `;
+
+            // 수정 폼 숨기기
+            document.getElementById("editForm").style.display = "none";
+        }
+        function showWithdrawalPopup(){
+            alert('회원 탈퇴가 완료되었습니다.');
+            window.location.href = 'https://rage0501.cafe24.com/YJD/home.html';
+        }
+    </script>
+</body>
+</html>
